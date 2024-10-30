@@ -38,8 +38,11 @@ class LFUCache(BaseCaching):
                 ]
 
                 if len(lfu_keys) > 1:
-                    lfu_key =
-                    next(k for k in self.usage_order if k in lfu_keys)
+                    lfu_key = next(
+                            k
+                            for k in self.usage_order
+                            if k in lfu_keys
+                    )
                     self.usage_order.remove(lfu_key)
                 else:
                     lfu_key = lfu_keys[0]
